@@ -1,13 +1,22 @@
 ---
-const tags = ['DeFi', 'Governance', 'Infrastructure','Layer1', 'Layer2', 'Protocol R\&D'];
+const tags = [
+  "DeFi",
+  "Governance",
+  "Infrastructure",
+  "Layer1",
+  "Layer2",
+  "Protocol R&D",
+];
 ---
-
 
 <nav class="researchNav">
   {
     tags.map((tag) => {
       return (
-        <a class="nav-link carousel-cell" href={`/blog/tags/${tag.toLowerCase()}/`}>
+        <a
+          class="nav-link carousel-cell"
+          href={`/blog/tags/${tag.toLowerCase()}/`}
+        >
           {tag}
         </a>
       );
@@ -15,35 +24,40 @@ const tags = ['DeFi', 'Governance', 'Infrastructure','Layer1', 'Layer2', 'Protoc
   }
 </nav>
 
-
 <style lang="scss">
   .researchNav {
-    margin-block: 1.2rem;
     margin-block-end: 4rem;
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    border-top: 1.2px solid var(--semantic-green-default-normal);
-    border-bottom: 1.2px solid var(--semantic-green-default-normal);
     display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    flex-direction: column;
     column-gap: 2rem;
-    align-items: center;
     overflow-x: auto;
-    width: 100%;
+    width: 200px;
+    max-width: 200px;
+    height: 100%;
+    min-width: 200px;
     white-space: nowrap;
     scrollbar-width: none;
 
     a {
+      background-color: white;
       display: flex;
       align-items: center;
       column-gap: 0.2rem;
       font-size: 1rem;
       font-weight: 700;
-      background-color: var(--semantic-green-light-hover);
       color: var(--leather-dark-hover);
       min-width: fit-content;
       padding-inline: 0.4rem;
-      padding-block: 0.2rem;
-      border-radius: 0.5rem;
+      padding-block: 0.5rem;
+      border-radius: 0.2rem;
+      border: 2px solid black;
+      margin: 0.2rem;
+      font-family: "Sanchez", serif;
 
       &:hover {
         background-color: var(--semantic-green-dark-active);

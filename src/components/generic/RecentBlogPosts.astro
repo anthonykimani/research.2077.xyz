@@ -1,8 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogList from '../blog/BlogList.astro';
-import { Button } from '@eliancodes/brutal-ui';
-import ResearchNav from "../../components/layout/ResearchNav.astro";
+import { getCollection } from "astro:content";
+import BlogList from "../blog/BlogList.astro";
+import { Button } from "@eliancodes/brutal-ui";
 
 interface Props {
   count?: number;
@@ -15,24 +14,19 @@ const posts = await getCollection('blog').then((posts) =>
 );
 ---
 
-<section class='mt-8 mb-24'>
-    <div class='flex justify-between items-start'>
-      <div class="w-full">
-
-      <h2 class='text-2xl md:text-4xl lg:text-6xl mb-2'>
-        Research
-      </h2>
-      <p class="mb-16 text-xl">Deep dives and technical analyses on Ethereum infrastructure, protocols, and applications</p>
-      <div class="reasearchNav">
-				<ResearchNav/>
-			</div>  
+<section class="mt-8 mb-24">
+  <div class="flex justify-between items-start">
+    <div class="w-full">
+      <h2 class="text-2xl md:text-4xl lg:text-6xl mb-2">Research</h2>
+      <p class="mb-16 text-xl">
+        Deep dives and technical analyses on Ethereum infrastructure, protocols,
+        and applications
+      </p>
     </div>
 
-			
-      <div class='hidden'>
-        <Button href='/blog/'>view all research &rarr;</Button>
-      </div>
+    <div class="hidden">
+      <Button href="/blog/">view all research &rarr;</Button>
     </div>
-    <BlogList posts={posts} />
+  </div>
+  <BlogList posts={posts} />
 </section>
-
